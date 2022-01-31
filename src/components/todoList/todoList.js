@@ -122,6 +122,7 @@ function TodoList() {
               isValid={true}
               defaultChecked={item?.status === STATUS_COMPLETE}
               onChange={(e) => {
+                setIndexEditState(-1);
                 updateTodoStatus(index, item.id, item.status);
               }}
               id="check-box"
