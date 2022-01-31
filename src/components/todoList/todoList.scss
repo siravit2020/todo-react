@@ -1,0 +1,78 @@
+.container {
+  margin-top: 20px;
+}
+[contentEditable="true"]:empty:not(:focus):before {
+  color: rgba(255, 255, 255, 0.4);
+  content: attr(data-text);
+}
+.card,
+.card-border {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: top;
+    padding: 16px;
+    .message-layout {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-align: left;
+      padding: 0px 16px 0px 16px;
+    }
+    .date {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .textarea,
+    .textarea-line {
+      width: 100%;
+      background: rgba(0, 0, 0, 0);
+      color: white;
+      font-size: 18px;
+      border: none;
+      outline: 0;
+      // height: auto;
+      cursor: default;
+      resize: none;
+      // overflow: hidden;
+    }
+    .textarea-line {
+      text-decoration-line: line-through;
+    }
+  }
+  .action {
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+
+    .pen {
+      margin-right: 8px;
+    }
+  }
+  .send {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.input-text {
+  min-height: 60px;
+}
+.card-border {
+  border: 1px solid white;
+}
+.loading {
+  margin-top: 60px;
+  width: 50px;
+  height: 50px;
+}

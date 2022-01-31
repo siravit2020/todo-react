@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useReducer } from "react";
+import MainPage from "./pages/mainPage";
+import reducer, { initialState } from "./reducer/reducer";
+import { MainContext } from "./reducer/context";
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContext.Provider value={{ state, dispatch }}>
+      <section className="App">
+        <MainPage></MainPage>
+      </section>
+    </MainContext.Provider>
   );
 }
 
