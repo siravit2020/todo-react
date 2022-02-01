@@ -83,7 +83,12 @@ function TodoList() {
           className="pen"
           style={{ color: "rgba(255, 255, 255, 0.4)" }}
         ></BsPen>
-        <BsTrash style={{ color: "rgba(255, 255, 255, 0.4)" }}></BsTrash>
+        <BsTrash
+          type="button"
+          onClick={() => {
+            deleteTodo(index, item.id);
+          }}
+        ></BsTrash>
       </React.Fragment>
     ) : (
       <React.Fragment>
